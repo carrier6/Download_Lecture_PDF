@@ -61,7 +61,7 @@ if iframeSrc:
     i = 1
     png_list_2 = []
     for img in png_list:
-        if i > 8:
+        if i > len(png_list):
             break
         img = Image.open("download/"+str(i)+".png").convert("RGB")
         img.save("download/"+str(i)+".png")
