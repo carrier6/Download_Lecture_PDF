@@ -19,3 +19,4 @@ https://thecarrier6.notion.site/b0d9340ddd2d4940a4c9f1fa894eba55
 자료가 pdf 외인 경우를 대비하여 프로그램을 업데이트 시킬 필요가 있는 것 같다.  
 다운로드 시행할때 time.sleep(2) 없앨 필요 있다.  
 png = str(n) + ".png" 필요없으니 없앨 필요 있다.  
+if i > len(png_list): break 필요없으니 없앨 필요 있다.  
