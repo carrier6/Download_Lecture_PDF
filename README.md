@@ -10,7 +10,7 @@ https://thecarrier6.notion.site/b0d9340ddd2d4940a4c9f1fa894eba55
  열린 뷰어의 링크를 복사한다.  
  main2.py를 실행시키고 다운로드 할 링크(도메인이 https://ecampus.changwon.ac.kr/local/ubdoc/... 이여야함)를 붙여넣기하고 엔터를 누르면 자동으로 프로그램이 시작된다.  
  마지막에 저장할 이름을 입력하면 자료의 pdf 다운로드가 시작된다.  
-(scrap 폴더 안에 download 폴더가 있어야 한다.)
+(scrap 폴더 안에 download 폴더가 있어야 하고, 사용할때마다 download폴더를 비워주어야 한다.)  
 # 수정해야 할 것
 2024/09/08  
 링크 생성시에 원래 자료의 페이지 수보다 +1 만큼 더 생성하는 오류.. 하지만 결과물에는 이상이 없다. ==> 무한 반복문 내의 print()가 뱉어내는 것, 해결 필요  
