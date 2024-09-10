@@ -8,7 +8,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 import img2pdf
 from PIL import Image
-
+from glob import glob
 
 
 chrome_options = Options()
@@ -16,6 +16,11 @@ chrome_options.add_experimental_option("detach", True)
 
 driver = webdriver.Chrome(options=chrome_options)
 
+
+#download 폴더 초기화
+reset_dir = glob('download/*.png')
+for r in reset_dir:
+    os.remove(r)
 
 GetUrl = input("링크 주소 입력: ")
 driver.implicitly_wait(10)
@@ -54,23 +59,24 @@ if iframeSrc:
 
     print("--------png 알파값 처리 시작---------")
     path = r"C:\Users\HomePC\Desktop\scrap\download"
-    png_list= os.listdir(path)
-    print(png_list)
+    png_total = len(glob('download/*.png'))
+    #    png_list= os.listdir(path)
+    print(str(png_total)+"개 완료")
     i = 1
-    png_list_2 = []
-    for img in png_list:
+    png_list = []
+    for f in range(png_total):
         img = Image.open("download/"+str(i)+".png").convert("RGB")
         img.save("download/"+str(i)+".png")
-        png_list_2.append("download/"+str(i)+".png")
+        png_list.append("download/"+str(i)+".png")
         i=i+1
     print("-----------png 알파값 처리 완료--------------")
     
-    print(png_list_2)
+    print(png_list)
 
     pdf_name = input("저장할 자료 이름 입력: ")
     print("----------pdf 저장 시작-----------")
     with open(pdf_name + ".pdf", "wb") as file:
-        file.write(img2pdf.convert(png_list_2))
+        file.write(img2pdf.convert(png_list))
     print("----------pdf 저장 완료-----------")
 
 
