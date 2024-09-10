@@ -41,33 +41,29 @@ if iframeSrc:
     print(global_link)
     
     n = 1
-    print("----------png 링크 생성 시작------------")
+    print("----------링크 생성 및 다운로드시작------------")
     while 1:
         link = global_link + str(n) + '.png'
-        print(link)
-        time.sleep(2)
         try:
             urllib.request.urlretrieve(link, "download/" + str(n) + ".png")
-            png = str(n) + ".png"
+            print(link)
             n=n+1
         except:
-            print("----------링크 생성 종료-----------")
+            print("----------링크 생성 및 다운로드 종료-----------")
             break 
 
-    print("--------png 다운로드 및 알파값 처리 시작---------")
+    print("--------png 알파값 처리 시작---------")
     path = r"C:\Users\HomePC\Desktop\scrap\download"
     png_list= os.listdir(path)
     print(png_list)
     i = 1
     png_list_2 = []
     for img in png_list:
-        if i > len(png_list):
-            break
         img = Image.open("download/"+str(i)+".png").convert("RGB")
         img.save("download/"+str(i)+".png")
         png_list_2.append("download/"+str(i)+".png")
         i=i+1
-    print("-----------다운로드 및 알파값 처리 완료--------------")
+    print("-----------png 알파값 처리 완료--------------")
     
     print(png_list_2)
 
