@@ -1,7 +1,6 @@
 # Download_Lecture_PDF
 창원대학교 e캠퍼스 내 수업자료를 다운로드 하기위해 만든 프로그램  
   
-https://thecarrier6.notion.site/b0d9340ddd2d4940a4c9f1fa894eba55
 
 2024/9/8 1.0.0
 2024/9/8 1.0.1
